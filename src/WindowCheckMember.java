@@ -49,8 +49,6 @@ public class WindowCheckMember extends Application {
 			}
 		});
 
-
-
 		//Layout.
 		HBox inputBox = new HBox(inputField, buttonCheck);
 
