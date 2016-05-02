@@ -41,19 +41,27 @@ public class WindowCheckMember extends Application {
 		labelOK.setFont(new Font(50));
 		Label labelNOTok = new Label("Er ikke medlem");
 		HBox resultBox = new HBox();
+
+		// Press this button check name.
 		buttonCheck.setOnAction(e -> {
 			if(MemberCheck.check(inputField.getText())){
+				resultBox.getChildren().clear();
 				resultBox.getChildren().addAll(labelOK);
 			} else{
+				resultBox.getChildren().clear();
 				resultBox.getChildren().addAll(labelNOTok, buttonCreateMember);
 			}
 		});
 
-		//Layout.
-		HBox inputBox = new HBox(inputField, buttonCheck);
+		// Name is not a memeber, so create.
+		buttonCreateMember.setOnAction(e -> CreateMember.createMember());
 
+		//Layout.
+		HBox inputBox = new HBox(inputField, buttonCheck);	//Write name to be checked in inputField
 		VBox layout = new VBox();
+		// Content of resultBox is set with buttonCheck.setOnAction()
 		layout.getChildren().addAll(labelWindowHeader, inputBox, resultBox, buttonClose);
+
 
 		// Set scene and stage.
 		primaryStage.setScene(new Scene(layout, 400, 400));

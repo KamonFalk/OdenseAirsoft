@@ -12,14 +12,14 @@ public class Member {
     private String birthDate;
     private String passportNr;
     private int driversLicenseNr;
-    private Constants.membership_types membership;
+    private Settings.membership_types membership;
 
     ArrayList<Merchandise> buys = new ArrayList<>();    //Everything the member has bought.
     ArrayList<Equipment> rents = new ArrayList<>();     //Everything the member has rented.
 
     //DUMMY kan slettes.
     void setMembershipToDAY(){
-        membership = Constants.membership_types.DAY;
+        membership = Settings.membership_types.DAY;
     }
 
     ArrayList<Merchandise> shoppingHistory(){
