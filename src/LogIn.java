@@ -53,12 +53,16 @@ public class LogIn extends Application {
         final Button logInButton = new Button("Log ind");
         logInButton.setCursor(Cursor.HAND);
         logInButton.setDefaultButton(true);
-        logInButton.setOnAction(e ->
-            mainMenu2.mainMenu2()
-        );
+        logInButton.setOnAction(e -> {
+            usernameField.clear();
+            passwordField.clear();
+            logInWindow.close();
+            mainMenu2.mainMenu2(logInWindow);
+        });
 
         final Button helpButton = new Button("?");
         helpButton.setCursor(Cursor.HAND);
+        helpButton.setOnAction(e -> PopupBox.display("Hjælp", "For at kunne logge ind, skal bruge et brugernavn og password."));
 
         // HBox til at samle label og textfield[username], så de står ved siden af hinanden i programmet
         HBox usernameAndUserTextField = new HBox();

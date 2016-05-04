@@ -11,7 +11,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Created by Shark on 29-04-2016.
+ * Created by Flemmer on 29-04-2016.
  */
 public class ConfirmBox {
 

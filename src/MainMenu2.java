@@ -18,7 +18,7 @@ public class MainMenu2 extends LogIn{
     Stage mainMenu2;
     CreateMember createMemberObject;
 
-    public void mainMenu2(){
+    public void mainMenu2(Stage logInWindow){
         mainMenu2 = new Stage();
         createMemberObject = new CreateMember();
 
@@ -42,6 +42,7 @@ public class MainMenu2 extends LogIn{
         Button b_udlej = new Button("Udlej");
 
         Button b_logud = new Button("Log ud");
+               b_logud.setOnAction(e -> logUdClicked(logInWindow));
 
         // HBox til label
         HBox label = new HBox();
@@ -83,8 +84,32 @@ public class MainMenu2 extends LogIn{
         scene2.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         mainMenu2.setTitle("Odense Airsoft alpha 1.0 - HOVEDMENU ");
         mainMenu2.setScene(scene2);
+        mainMenu2.setOnCloseRequest(e -> {
+            e.consume();
+            closeProgram();
+        });
         mainMenu2.show();
 
     }
+
+    //---------------------------------------------------------------------------------
+
+    public void closeProgram(){
+        Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
+
+        if (answer.equals(true)) {
+            mainMenu2.close();
+        }
+    }
+
+    public void logUdClicked(Stage logInWindow){
+        Boolean answer = ConfirmBox.display("Log ud", "Er du sikker på, at du vil logge ud?");
+
+        if(answer.equals(true)){
+            mainMenu2.close();
+            logInWindow.show();
+        }
+    }
+
 
 }
