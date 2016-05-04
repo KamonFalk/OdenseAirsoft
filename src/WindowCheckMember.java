@@ -54,7 +54,7 @@ public class WindowCheckMember extends Application {
 		});
 
 		// Name is not a memeber, so create.
-		buttonCreateMember.setOnAction(e -> CreateMember.createMember());
+		buttonCreateMember.setOnAction(e -> new CreateMember().createMember());
 
 		//Layout.
 		HBox inputBox = new HBox(inputField, buttonCheck);	//Write name to be checked in inputField

@@ -19,7 +19,7 @@ public class Member {
 
     //DUMMY kan slettes.
     void setMembershipToDAY(){
-        membership = Settings.membership_types.DAY;
+        membership = Settings.membership_types.ONE_DAY;
     }
 
     ArrayList<Merchandise> shoppingHistory(){

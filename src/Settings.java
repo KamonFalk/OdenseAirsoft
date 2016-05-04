@@ -4,5 +4,5 @@
  */
 public class Settings {
     enum user_type {DAILY, ACCOUNTANT}
-    enum membership_types {PASSIVE, DAY, HALF_YEAR, FULL_YEAR}
+    enum membership_types {PASSIVE, ONE_DAY, HALF_YEAR, FULL_YEAR}
 }
