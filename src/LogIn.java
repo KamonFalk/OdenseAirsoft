@@ -23,7 +23,7 @@ public class LogIn extends Application {
     }
 
     Stage logInWindow;
-    MainMenu mainMenu;
+    MainMenu2 mainMenu2;
     TextField usernameField;
     PasswordField passwordField;
 
@@ -31,7 +31,7 @@ public class LogIn extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         logInWindow = primaryStage;
-        mainMenu = new MainMenu();
+        mainMenu2 = new MainMenu2();
 
         // Labels
         final Label welcomeLabel = new Label("          Odense Airsoft build 1.0 \n\n                 Venligst log ind");
@@ -54,7 +54,7 @@ public class LogIn extends Application {
         logInButton.setCursor(Cursor.HAND);
         logInButton.setDefaultButton(true);
         logInButton.setOnAction(e ->
-            mainMenu.mainMenu()
+            mainMenu2.mainMenu2()
         );
 
         final Button helpButton = new Button("?");
@@ -87,7 +87,7 @@ public class LogIn extends Application {
         Scene scene = new Scene(sp);
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         logInWindow.setScene(scene);
-        logInWindow.setTitle("Odense Airsoft alpha 1.0 - LOG IN");
+        logInWindow.setTitle("Odense Airsoft alpha 1.0 - LOG IND");
         logInWindow.setResizable(false);
         logInWindow.setHeight(350);
         logInWindow.setWidth(500);

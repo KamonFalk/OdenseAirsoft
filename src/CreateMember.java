@@ -71,6 +71,7 @@ public class CreateMember extends MainMenu{
             b_create.getStyleClass().add("buttonGreen");
             b_create.getStyleClass().add("button:hover");
             b_create.setCursor(Cursor.HAND);
+            b_create.setOnAction(e -> createMember_pressed());
 
         // Clear button
         Button b_clear = new Button("Ryd alle felter");
@@ -166,12 +167,18 @@ public class CreateMember extends MainMenu{
 
         }
 
+        //---------------------------------------------------------------------------------
+
         public void closeProgram(){
             Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
 
             if (answer.equals(true)) {
                 createMemberObject.close();
             }
+        }
+
+        public void createMember_pressed(){
+
         }
 
     }
