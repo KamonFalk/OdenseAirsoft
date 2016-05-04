@@ -26,6 +26,7 @@ public class PopupBox {
         VBox vBox = new VBox(10);
         vBox.getChildren().addAll(label, closeButton);
         vBox.setAlignment(Pos.CENTER);
+        vBox.setId("defaultBackground");
 
         Scene scene = new Scene(vBox);
         window.setScene(scene);

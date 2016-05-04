@@ -49,6 +49,7 @@ public class ConfirmBox {
         layout.setPadding(new Insets(5, 5, 5, 5));
         layout.getChildren().addAll(label, hBoxForButtons);
         layout.setAlignment(Pos.CENTER);
+        layout.setId("backgroundDefault");
 
         Scene scene = new Scene(layout);
         scene.getStylesheets().add("style.css");
@@ -58,6 +59,5 @@ public class ConfirmBox {
 
         return answer;
     }
-
 
 }
