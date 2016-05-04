@@ -35,6 +35,7 @@ public class StoreWindow {
         buttonEditWare.setMinSize(100, 100);
         buttonEditWare.getStyleClass().add("button");
         buttonEditWare.setOnAction(e ->
+                //chooseWareToEdit() and not editWare When chooseWareToEdit is finished
                 editWare()
         );
         Button buttonSellWare = new Button("Saelg Vare");
@@ -67,6 +68,7 @@ public class StoreWindow {
     }
 
 
+    //Retrieves a list of wares from the database the user then selects a ware from to edit
     public void chooseWareToEdit(){
         GridPane gridPane = new GridPane();
         Scene editWareScene = new Scene(gridPane, 500, 500);
