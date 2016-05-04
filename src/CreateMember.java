@@ -7,6 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -163,6 +164,7 @@ public class CreateMember extends MainMenu{
             e.consume();
             closeProgram();
         });
+        createMemberObject.initModality(Modality.APPLICATION_MODAL);
         createMemberObject.show();
 
         }
