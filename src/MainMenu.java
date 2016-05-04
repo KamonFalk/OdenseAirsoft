@@ -20,15 +20,9 @@ public class MainMenu extends LogIn{
         mainMenu = new Stage();
         createMemberObject = new CreateMember();
 
-        // Dropshadow effekt til labels/text
-        DropShadow ds = new DropShadow();
-        ds.setOffsetY(3.0f);
-        ds.setColor(Color.color(0.4f, 0.4f, 0.4f));
-
         // Labels
         Label labelHovedMenu = new Label("                      " +
                 "Velkommen!\n Brug knapperne til at navigere rundt");
-        labelHovedMenu.setEffect(ds);
         labelHovedMenu.setCache(true);
         labelHovedMenu.setFont(Font.font(null, FontWeight.BOLD, 32));
         labelHovedMenu.setAlignment(Pos.TOP_CENTER);

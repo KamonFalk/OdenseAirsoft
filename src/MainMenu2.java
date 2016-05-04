@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 /**
@@ -21,12 +23,16 @@ public class MainMenu2 extends LogIn{
         createMemberObject = new CreateMember();
 
         // Labels
+        Label labelHovedMenu = new Label("                      " + "Velkommen!\n Brug knapperne til at navigere rundt");
+        labelHovedMenu.setFont(Font.font(null, FontWeight.BOLD, 24));
+        labelHovedMenu.setAlignment(Pos.TOP_CENTER);
         Label l_medlem = new Label("Medlem");
         Label l_kiosk = new Label("Kiosk");
         Label l_udstyr = new Label("Udstyr");
 
         // Buttons
         Button b_opret = new Button("Opret medlem");
+               b_opret.setOnAction(e -> createMemberObject.createMember());
         Button b_lister = new Button("Lister");
         Button b_check = new Button("Check");
 
@@ -36,6 +42,13 @@ public class MainMenu2 extends LogIn{
         Button b_udlej = new Button("Udlej");
 
         Button b_logud = new Button("Log ud");
+
+        // HBox til label
+        HBox label = new HBox();
+        label.setSpacing(30);
+        label.setPadding(new Insets(35, 0, 35, 0));
+        label.setAlignment(Pos.TOP_CENTER);
+        label.getChildren().add(labelHovedMenu);
 
         // HBox til at sætte labels + knapper langs med hinanden [MEDLEM]
         HBox medlemBox = new HBox();
@@ -60,15 +73,15 @@ public class MainMenu2 extends LogIn{
 
         VBox vBox = new VBox();
         vBox.setSpacing(5);
-        vBox.getChildren().addAll(medlemBox, kioskBox, udstyrBox);
+        vBox.getChildren().addAll(label, medlemBox, kioskBox, udstyrBox);
 
         StackPane sp = new StackPane();
         sp.getChildren().addAll(vBox);
         sp.setId("backgroundDefault");
 
-        Scene scene2 = new Scene(sp, 900, 506);
+        Scene scene2 = new Scene(sp, 500, 350);
         scene2.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
-        mainMenu2.setTitle("Odense Airsoft alpha 1.0 - HOVED MENU ");
+        mainMenu2.setTitle("Odense Airsoft alpha 1.0 - HOVEDMENU ");
         mainMenu2.setScene(scene2);
         mainMenu2.show();
 
