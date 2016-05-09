@@ -42,8 +42,7 @@ public class StoreWindow {
         buttonEditWare.setMinSize(100, 100);
         buttonEditWare.getStyleClass().add("button");
         buttonEditWare.setOnAction(e ->
-                //chooseWareToEdit() and not editWare When chooseWareToEdit is finished
-                editWareObject.editWare()
+                chooseWareToEditObject.chooseWareToEdit()
         );
         Button buttonSellWare = new Button("Saelg Vare");
         buttonSellWare.setCursor(Cursor.HAND);
