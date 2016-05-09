@@ -16,10 +16,12 @@ import javafx.stage.Stage;
 public class MainMenu2 extends LogIn{
 
     Stage mainMenu2;
+    StoreWindow storeWindowObject;
     CreateMember createMemberObject;
 
     public void mainMenu2(Stage logInWindow){
         mainMenu2 = new Stage();
+        storeWindowObject = new StoreWindow();
         createMemberObject = new CreateMember();
 
         // Labels
@@ -37,6 +39,7 @@ public class MainMenu2 extends LogIn{
         Button b_check = new Button("Check");
 
         Button b_varesortiment = new Button("Varesortiment");
+            b_varesortiment.setOnAction(e -> storeWindowObject.storeWindow());
         Button b_salg = new Button("Salg");
 
         Button b_udlej = new Button("Udlej");
