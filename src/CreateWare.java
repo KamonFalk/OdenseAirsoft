@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -18,6 +19,8 @@ public class CreateWare {
 
     Stage createWareObject;
     public void createWare(){
+
+        createWareObject = new Stage();
 
         Wares ware1 = new Wares();
         // Labels
@@ -92,5 +95,19 @@ public class CreateWare {
         createWareScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         createWareObject.setTitle("Odense Airsoft alpha 1.0 - Opret Vare");
         createWareObject.setScene(createWareScene);
+        createWareObject.setOnCloseRequest(e -> {
+            e.consume();
+            closeProgram();
+        });
+        createWareObject.initModality(Modality.APPLICATION_MODAL);
+        createWareObject.show();
+    }
+    public void closeProgram(){
+
+        Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
+
+        if (answer.equals(true)) {
+            createWareObject.close();
+        }
     }
 }

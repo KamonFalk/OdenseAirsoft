@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -20,6 +21,8 @@ public class EditWare {
 
     public void editWare(){
 
+
+        editWareObject = new Stage();
 
         Wares ware2 = new Wares("Hej", 2, 2);
         // Labels
@@ -97,5 +100,19 @@ public class EditWare {
         editWareScene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         editWareObject.setTitle("Odense Airsoft alpha 1.0 - Rediger Vare");
         editWareObject.setScene(editWareScene);
+        editWareObject.setOnCloseRequest(e -> {
+            e.consume();
+            closeProgram();
+        });
+        editWareObject.initModality(Modality.APPLICATION_MODAL);
+        editWareObject.show();
+    }
+    public void closeProgram(){
+
+        Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
+
+        if (answer.equals(true)) {
+            editWareObject.close();
+        }
     }
 }
