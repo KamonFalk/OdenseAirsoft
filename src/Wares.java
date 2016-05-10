@@ -1,24 +1,22 @@
-import javafx.beans.property.SimpleStringProperty;
-
 /**
  * Created by Falk on 04/05/2016.
  */
 public class Wares {
 
-    private int ware_ID;
-    private SimpleStringProperty name;
+    int ware_ID;
+    String name;
     int price;
     int amount;
 
-    public Wares(int ware_ID, String sSPName, int price, int amount){
+    public Wares(int ware_ID, String name, int price, int amount){
         this.ware_ID = ware_ID;
-        this.name = new SimpleStringProperty(sSPName);
+        this.name = name;
         this.price = price;
         this.amount = amount;
     }
 
-    Wares(String sSPName, int price, int amount){
-        this.name = new SimpleStringProperty(sSPName);
+    Wares(String name, int price, int amount){
+        this.name = name;
         this.price = price;
         this.amount = amount;
     }
@@ -36,11 +34,11 @@ public class Wares {
     }
 
     String getName() {
-        return name.get();
+        return name;
     }
 
-    void setName(String sSPName) {
-        name.set(sSPName);
+    void setName(String name) {
+        this.name = name;
     }
 
     int getPrice() {

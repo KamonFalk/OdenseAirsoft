@@ -95,7 +95,7 @@ public class ChooseWareToEdit {
         chooseWareToEditObject.show();
 
     }
-    public void closeProgram(){
+    private void closeProgram(){
 
         Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
 
