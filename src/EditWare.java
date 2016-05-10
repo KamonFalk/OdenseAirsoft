@@ -19,11 +19,14 @@ public class EditWare {
 
     private Stage editWareObject;
 
-    public void editWare(){
+    int c;
+    String name;
+    int price;
+    int amount;
+    public void editWare(Wares c){
 
 
         editWareObject = new Stage();
-
         Wares ware2 = new Wares("Hej", 2, 2);
         // Labels
         final Label title1 = new Label("                                    " +

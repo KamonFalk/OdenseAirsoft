@@ -1,59 +1,61 @@
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  * Created by Falk on 04/05/2016.
  */
-public class Wares {
+public class Wares{
 
-    int ware_ID;
-    String name;
-    int price;
-    int amount;
+    private SimpleIntegerProperty wareID;
+    private SimpleStringProperty name;
+    private SimpleIntegerProperty price;
+    private SimpleIntegerProperty amount;
 
-    public Wares(int ware_ID, String name, int price, int amount){
-        this.ware_ID = ware_ID;
-        this.name = name;
-        this.price = price;
-        this.amount = amount;
+    public Wares(Integer wareID, String name, Integer price, Integer amount){
+        this.wareID = new SimpleIntegerProperty (wareID);
+        this.name = new SimpleStringProperty(name);
+        this.price = new SimpleIntegerProperty(price);
+        this.amount = new SimpleIntegerProperty (amount);
     }
 
     Wares(String name, int price, int amount){
-        this.name = name;
-        this.price = price;
-        this.amount = amount;
+        this.name = new SimpleStringProperty(name);
+        this.price = new SimpleIntegerProperty(price);
+        this.amount = new SimpleIntegerProperty (amount);
     }
 
-    Wares(){
+    Wares(){}
 
-    }
+    public Integer getWareID() {return wareID.get();}
 
-    public int getWare_ID() {
-        return ware_ID;
-    }
+    public SimpleIntegerProperty wareIDProperty() {return wareID;}
 
-    public void setWare_ID(int ware_ID) {
-        this.ware_ID = ware_ID;
-    }
+    public void setWare_ID(Integer wareID) {this.wareID.set(wareID);}
 
-    String getName() {
-        return name;
-    }
 
-    void setName(String name) {
-        this.name = name;
-    }
 
-    int getPrice() {
-        return price;
-    }
+    public String getName() {return name.get();}
 
-    void setPrice(int price) {
-        this.price = price;
-    }
+    public SimpleStringProperty nameProperty() {return name;}
 
-    int getAmount() {
-        return amount;
-    }
+    public void setName(String name) {this.name.set(name);}
 
-    void setAmount(int amount) {
-        this.amount = amount;
-    }
+
+
+
+
+    public Integer getPrice() {return price.get();}
+
+    public SimpleIntegerProperty priceProperty() {return price;}
+
+    public void setPrice(Integer price) {this.price.set(price);}
+
+
+
+
+    public Integer getAmount() {return amount.get();}
+
+    public SimpleIntegerProperty amountProperty() {return amount;}
+
+    public void setAmount(Integer amount) {this.amount.set(amount);}
 }

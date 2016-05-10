@@ -46,9 +46,9 @@ public class CreateWare {
         b_create.getStyleClass().add("button:hover");
         b_create.setCursor(Cursor.HAND);
         b_create.setOnAction(e -> {
-            ware1.name = tf_name.getText();
-            ware1.price = Integer.parseInt(tf_price.getText());
-            ware1.amount = Integer.parseInt(tf_amount.getText());
+            /*ware1.nameString = tf_name.getText();
+            ware1.priceInt = Integer.parseInt(tf_price.getText());
+            ware1.amountInt = Integer.parseInt(tf_amount.getText());*/
         });
 
         // Clear button
