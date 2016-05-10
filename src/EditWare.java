@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  */
 public class EditWare {
 
-    Stage editWareObject;
+    private Stage editWareObject;
 
     public void editWare(){
 
@@ -107,7 +107,7 @@ public class EditWare {
         editWareObject.initModality(Modality.APPLICATION_MODAL);
         editWareObject.show();
     }
-    public void closeProgram(){
+    private void closeProgram(){
 
         Boolean answer = ConfirmBox.display("Luk", "Er du sikker på, at du vil lukke?");
 
